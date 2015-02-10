@@ -70,12 +70,17 @@ var seanWhite = new Player({
 	number: "13"
 });
 
-
+var Players = [benDurand, jeremyJohnson, tuckerTuberville, jonathanWallace, seanWhite];
 
 
 
 var playerTemplateFunction = Handlebars.templates['playerTemplate'];
 
-var playerHTML = playerTemplateFunction(person);
+Players.forEach(function(x){
+	var playerHTML = playerTemplateFunction(x);
+	$('.hero-unit ul').append(playerHTML);
+});
+// var playerHTML = playerTemplateFunction(x);
 
-$('.hero-unit ul').html(playerHTML);
+
+// $('.hero-unit ul').append(playerHTML);
